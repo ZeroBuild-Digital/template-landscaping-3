@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand: #0A0A0C;
+  --color-brand-dark: #050607;
+  --color-brand-secondary: #1A1A1F;
+  --color-brand-accent: #D4B679;
+  --color-brand-accent-bright: #E8D4A3;
+  --color-brand-accent-glow: rgba(232, 212, 163, 0.4);
+  --color-text: #0F172A;
+  --color-charcoal: #0F172A;
+  --color-surface-light: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --font-display: var(--font-body);
+}
+
+@layer base {
+  body {
+    background: var(--color-brand-dark);
+    color: #FFFFFF;
+    font-family: var(--font-body), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .noise-overlay {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

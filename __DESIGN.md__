@@ -1,0 +1,394 @@
+# `__DESIGN.md__` — Landscaping Template 4 (Cinematic Nightscape)
+
+## Variation lock (V3 — Black-Tie Speakeasy / Automotive Showroom)
+
+After three iterations the V3 lock is:
+
+- **Palette:** Palette 6 Navy Professional base, **near-pure-black override** + **champagne accent override**.
+  - `--color-brand` `#0A0A0C` (near-pure-black, base) — replaces the original `#1E3A8A` navy.
+  - `--color-brand-dark` `#050607` (jet black, deepest — Footer + Recent Work).
+  - `--color-brand-secondary` `#1A1A1F` (lifted dark gray — Why Us).
+  - `--color-brand-accent` `#D4B679` (refined champagne / pale gold) — replaces the original `#F97316` orange.
+  - `--color-brand-accent-bright` `#E8D4A3` (lighter champagne for glow + active-carousel ring).
+  - `--color-brand-accent-glow` `rgba(232, 212, 163, 0.4)`.
+- **Font pairing:** **DM Sans single-typeface system** (weights 400/500/600/700) — used for BOTH body and display. No separate display font. Display variant is distinguished from body only by uppercase + `tracking-wide` letter-spacing + larger size. Hero H1 is uppercase DM Sans `font-semibold` (600) base + `font-bold` (700) on the champagne accent word, with `tracking-wide`. Pivoted from V3.1's Big Shoulders Display after user feedback that condensed-architectural letterforms were "doing too much" — the single-typeface approach lets the typography recede so the mood comes from black backgrounds + champagne + spacing + photography (Kitui Fluid's approach). Implemented by setting `--font-display: var(--font-body)` in `:root`; every existing `font-display` Tailwind class still works but resolves to DM Sans.
+- **Composition:** **ALL-DARK + VISIBLE AMBIENT PHOTOGRAPHY (V3.4)** — 10 of 10 sections render dark with perceptibly varied dark treatments. No light breathers. V3.3 added ambient photo layers at opacity 0.10–0.22 but they were invisible. **V3.4 corrected to opacity 0.30–0.40** (visible-as-texture), reduced darkening overlays to 0.60–0.78 (photo shows through), varied section base gradients perceptibly across the tone map (Services `#15151A→#0A0A0C` lifted-slate, WhyUs `#1F1F25→#0F0F14` more-lifted-gray, FAQ `#15151A→#080A0D` lifted-cool, CTA `#0A0A0C→#020203` dramatic, Footer `#020203→#000000` abyss), bumped champagne radial glow blobs to 0.08–0.12 opacity at 60–70% spread, and raised noise overlay to 0.06 site-wide. Net effect: scrolling reads as moving through visibly different rooms with different ambient lighting. Layering (back→front): photo (`absolute inset-0 pointer-events-none`) → darkening linear-gradient overlay → champagne+vignette radial-gradient overlay → noise-overlay → content (`relative z-10`).
+- **Hero:** Side-by-side, **text LEFT + ContactForm RIGHT** (per `agency-context.md` Visual Hard Rule #1). H1 sized to fit the fold (`text-6xl md:text-7xl lg:text-8xl` — capped at 8xl on `xl` to keep the form visible above the fold on standard laptop viewports).
+- **About:** Copy LEFT, image RIGHT.
+- **Reviews:** Image LEFT, reviews RIGHT.
+- **Cards:** Glass-on-dark (`bg-slate-900/40 backdrop-blur-sm ring-1 ring-white/10`) with champagne hover edge + glow. **NO tilt treatment.**
+- **Reference templates:** Motorflow (Webflow automotive — `motorflowtemplate.webflow.io`) — Montserrat 900, near-pure-black bgs (`#050607` / `#090a0c` / `#121418`), bright punchy CTA accent, full-bleed automotive photography, cinematic. Kitui Fluid (Squarespace fashion) — oversized heavy display type, sparse impactful layouts, dramatic full-bleed imagery. The Template 4 mood is the hybrid: black-tie speakeasy / luxury automotive showroom.
+- **Mood vocabulary:** shadowy, showy, dramatic, fancy, dim, premium-onyx, cinematic.
+
+## Rationale
+
+Template 1 (Earthy Forest, warm green, light-dominant) and Template 2 (Sage & Stone, muted sage, light-dominant) are quiet/premium/residential. Template 3 (Bold Industrial, slate-charcoal + safety yellow, dark-dominant warm) is loud/industrial/hardscape. Template 4's job in the library is **cool dramatic midnight elegance** — the pick for landscapers positioning around outdoor architectural lighting, luxury hardscape at twilight, blue-hour estate showcases, premium nightscape installations.
+
+Reference vibe: the photography portfolio of an architectural lighting designer, the case-study landing page of a luxury hotel chain showcasing twilight property shots, the high-end nightclub website. Properties shot at dusk/twilight with dramatic uplighting, deep blue sky, pools and pathways glowing, hardscape carved out by spotlight.
+
+- Palette 6 Navy Professional is `design-reference.md`'s "default safe choice" for plumbers/electricians/HVAC/GCs — but the canonical hex (`#1E3A8A` + `#F97316`) reads as **safe/conservative trust-bank** rather than dramatic cinematic. Deepening the navy to true midnight (`#0F1E3D` to `#0A1429`) and replacing the orange accent with electric cyan reframes the palette as **architectural lighting cinematography** rather than corporate trust. The "Navy Professional" base is what keeps it visually credible; the deepening and cyan override are what make it distinctive.
+- DM Serif Display at oversized display sizes (Hero H1 at `text-7xl md:text-8xl lg:text-9xl` — bigger than every prior template) gives the "movie poster" feel. The sharp-modern serif character reads as editorial-cinematic, not antique-traditional.
+- DM Sans for body keeps reading clean and geometric without the warmth a humanist sans would add — Template 4 is COOL.
+- Dark-dominant composition (5 dark sections + Footer = 6 of 10) is even more dark-heavy than Template 3, but the dark treatment differs: Template 3 used flat dark slate + safety-yellow accents; Template 4 uses spotlight radial gradients + glassmorphism overlays + electric-cyan glow effects. Different dark idiom entirely.
+- Maximizing differentiation: at a glance in the library grid, Template 4 reads as "the cyan-on-deep-blue one." Every other template (1: green, 2: sage, 3: yellow) has a warm accent or muted palette. Template 4 is the cool/electric outlier.
+
+## Color tokens
+
+Declared in `app/globals.css` `:root` (Tailwind v3 stack — matches Templates 2 and 3) and consumed via Tailwind v3 `theme.extend.colors` in `tailwind.config.ts`.
+
+```css
+:root {
+  --color-brand:               #0F1E3D; /* balanced midnight — Hero, About, CTA spotlight sections */
+  --color-brand-dark:          #0A1429; /* deepest midnight — Recent Work, Footer flat sections */
+  --color-brand-secondary:     #1A2E5C; /* lifted midnight — spotlight gradient lighter stop, Trust Strip glass tint */
+  --color-brand-accent:        #06B6D4; /* refined cyan / Tailwind cyan-500 — solid CTA bg, Quote pill bg, headings underlines, divider lines */
+  --color-brand-accent-bright: #22D3EE; /* electric cyan / Tailwind cyan-400 — inside box-shadow glow, active-carousel ring, hover states */
+  --color-brand-accent-glow:   rgba(34, 211, 238, 0.4); /* the glow alpha used in cyan box-shadows on CTAs + active slide */
+  --color-text:                #0F172A; /* slate-900 — body text on light bgs, dark text on cyan */
+  --color-surface-light:       #F8FAFC; /* slate-50 breathers (Services, Why Us alternation) */
+  --color-surface:             #FFFFFF; /* white sections (Reviews, FAQ) */
+}
+```
+
+`tailwind.config.ts` extends:
+
+```ts
+theme: {
+  extend: {
+    colors: {
+      brand: 'var(--color-brand)',
+      'brand-dark': 'var(--color-brand-dark)',
+      'brand-secondary': 'var(--color-brand-secondary)',
+      'brand-accent': 'var(--color-brand-accent)',
+      'brand-accent-bright': 'var(--color-brand-accent-bright)',
+    },
+    fontFamily: {
+      display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+      body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+    },
+  },
+}
+```
+
+## Kept rows (palette-invariant — universal across every template)
+
+- **Stars in Reviews:** `<Star className="fill-amber-400 text-amber-400" />`. **NEVER shifts to cyan.** Amber is intentionally distinct from the brand accent so 5-star rows read as a cultural symbol, not a brand element.
+- **In-section phone CTA blocks (e.g., the emerald phone block inside the CTA Section):** `bg-emerald-700 text-white`. **NEVER shifts to cyan.** Green = "call now / immediate action" cultural signal, independent of brand.
+
+## Always-dark-text-on-cyan rule (HARD — WCAG-derived)
+
+Cyan accents (`#06B6D4` and `#22D3EE`) have low luminance contrast with white text. Every place cyan is used as a **background**, the text must be `text-slate-900` (`#0F172A`).
+
+| Surface | Background | Text/icon |
+|---|---|---|
+| Primary CTA buttons (Hero submit, CTA Section big button) | `bg-cyan-400` | `text-slate-900` |
+| Mobile Sticky CTA Bar Quote pill | `bg-cyan-400` | `text-slate-900` (NOT white) |
+| Navbar (scrolled) Get Quote button | `bg-cyan-400` | `text-slate-900` |
+| Hero ContactForm submit button | `bg-cyan-400` | `text-slate-900` |
+
+WCAG contrast: `#0F172A` (slate-900) on `#22D3EE` (cyan-400) ≈ 12.0:1 (passes AAA at every size). White on `#22D3EE` ≈ 1.85:1 (fails everything). `#0F172A` on `#06B6D4` (cyan-500) ≈ 10.0:1 (passes AAA).
+
+The rule does NOT apply when cyan is the **foreground** color (e.g., `text-cyan-400` H1 word pop, `text-cyan-600` eyebrows on light bgs, `text-cyan-400` eyebrows on dark bgs, `border-l-cyan-400` borders, `border-r-cyan-400/40` Trust Strip dividers, `bg-cyan-400/15` icon-circle tints). Foreground cyan on dark bgs is the intended high-contrast moment.
+
+## Accent usage budget (13 touchpoints — HARD)
+
+Electric cyan (`#06B6D4` / `#22D3EE`) is allowed ONLY in these thirteen places. Spamming the accent flattens its visual impact.
+
+1. **Primary CTA buttons** (Hero ContactForm submit, CTA Section big button, Navbar scrolled Get Quote) — `bg-cyan-400 text-slate-900` with the signature `shadow-[0_0_40px_rgba(34,211,238,0.4)]` cyan glow.
+2. **One one-word H1 color pop in Hero** — `text-cyan-400` on a single word, with the rest of H1 inheriting white. Per design-reference.md: "exactly ONE one-word accent color pop."
+3. **Active Recent Work carousel slide ring + glow** — `ring-2 ring-cyan-400 shadow-[0_0_60px_rgba(34,211,238,0.4)]`. Peek slides have NEITHER ring NOR glow.
+4. **Trust Strip vertical dividers + 2px top border** — `border-r border-r-cyan-400/40` between signals on desktop + `border-t-2 border-t-cyan-400/60` on the glass container (the 2px CTA-accent border per Visual Hard Rule #2).
+5. **Link hover states throughout** — `hover:text-cyan-400` (dark bgs) or `hover:text-cyan-700` (light bgs).
+6. **Mobile Sticky CTA Bar Quote pill background** — `bg-cyan-400` (with `text-slate-900` per always-dark-text rule above) and the signature `shadow-[0_0_30px_rgba(34,211,238,0.5)]` glow.
+7. **Services + Why Us card hover edge ring** — `hover:ring-1 hover:ring-cyan-500/30`. Resting cards have no cyan; hover adds the cyan edge as the interaction signal.
+8. **Services + Why Us icon containers on hover** — at-rest `bg-cyan-50 text-cyan-600`; on hover `group-hover:bg-cyan-100 group-hover:text-cyan-700` (the icon container fades to a deeper cyan tint per Visual Hard Rule #2).
+9. **FAQ open-item glow + tinted ring** — `ring-1 ring-cyan-500/40 shadow-[0_8px_24px_rgba(34,211,238,0.1)]` on the open accordion item only.
+10. **Footer link hovers** — `text-slate-400 hover:text-cyan-400`.
+11. **Thin cyan divider between CTA Section and Footer** — `border-t border-t-cyan-400/30` on the Footer wrapper.
+12. **Recent Work section heading underline** — `border-b-2 border-b-cyan-400 inline-block pb-2` under the H2.
+13. **Section-eyebrow accent bars** — every section's header cluster gets `h-1 w-12 bg-cyan-400 rounded-full mb-4` (on dark sections) or `h-1 w-12 bg-cyan-500 rounded-full mb-4` (on light sections — cyan-500 sits with more weight on light bgs; cyan-400 would wash out). This is the canonical "accent bar above eyebrow" pattern per Visual Hard Rule #2.
+
+Adjacent allowed uses that don't count against the budget:
+- Cyan eyebrow text on every section header: `text-cyan-400` on dark sections, `text-cyan-600` on light sections. These are paired 1:1 with the accent bar in #13 and are part of the same eyebrow-cluster moment.
+- Glassmorphism `ring-1 ring-white/20` on the Hero form card and Trust Strip — the ring color is WHITE/20, not cyan. The cyan glow on the form's submit button is what counts toward #1.
+
+NOT allowed:
+- Cyan in body copy.
+- Cyan on icons in the navbar.
+- Cyan as a section background (would crash WCAG for the body text — every section bg stays dark midnight, slate-50, or white).
+- Cyan on more than one word of any H1.
+- Cyan as a section rule/border (other than the listed Trust Strip dividers, Trust Strip top border, Recent Work heading underline, Footer top border, FAQ open-item ring, About attributed-quote left border).
+
+## Typography
+
+- **Display font:** DM Serif Display, weight 400 (the font is designed for display sizes — no need for bold/italic alternates). Loaded via `next/font/google` with `subsets: ['latin']`, exposed as `--font-display`.
+- **Body font:** DM Sans, weights 400, 500, 600, 700. Loaded via `next/font/google` with `subsets: ['latin']`, exposed as `--font-body`.
+- **Scale (informed by design-reference.md §1.2 but pushed bigger on H1 for cinematic-display effect):**
+  - Body: `text-base md:text-[17px] leading-relaxed`.
+  - H4: `text-xl font-semibold` (DM Sans bold for sub-headings; H4 is the only level that doesn't use DM Serif Display).
+  - H3: `text-2xl` (DM Serif Display).
+  - H2: `text-3xl md:text-4xl lg:text-5xl tracking-tight` (DM Serif Display).
+  - **H1 — Hero hero-scale, OVERSIZED for Template 4:** `text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[1.02] tracking-tight` (DM Serif Display). The xl:9xl tier is what gives Hero its movie-poster feel — explicitly bigger than every prior template's H1 max size.
+- **Line length:** body capped at `max-w-prose` or `max-w-[65ch]`.
+- **Form inputs:** minimum `text-base` (16px) to prevent iOS zoom-on-focus.
+
+## Base CSS Heading-Color Rule
+
+In `app/globals.css`:
+
+```css
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    /* NO color property here — headings inherit context. */
+  }
+}
+```
+
+**Hard rule:** the `@layer base` heading rule sets `font-family` ONLY. Color is NEVER set globally.
+
+- **Light-section headings** (Services H2, Reviews H2, Why Us H2, FAQ H2) get explicit `text-slate-900` (or `text-[color:var(--color-text)]`) on the element itself.
+- **Dark-section headings** (Hero H1, About H2, Recent Work H2, CTA Section H2, Footer column headings) inherit `text-white` from parent containers — no explicit color class needed on the heading itself.
+
+This rule exists because if `color: #0F172A` were set globally on headings, dark-section headings would render as unreadable dark slate on dark midnight. The agency has been bitten by this before; the rule is HARD.
+
+## Spotlight Gradient subsection (NEW for Template 4)
+
+The signature visual mechanic of dark-spotlight sections. Applied to Hero, About, and CTA Section. (Recent Work and Footer use flat deepest-midnight backgrounds without spotlight — they're meant to feel atmospheric and uniformly dark, not lit from one source.)
+
+**Pattern — Hero (centered spotlight):**
+
+```tsx
+<section className="relative bg-[#0F1E3D] min-h-screen overflow-hidden">
+  {/* Layer 1 — Unsplash bg image */}
+  <ImageWithFallback
+    src="https://images.unsplash.com/..."
+    alt=""
+    fill
+    className="absolute inset-0 object-cover"
+  />
+  {/* Layer 2 — Spotlight radial gradient overlay */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(15,30,61,0.4)_0%,rgba(10,20,41,0.95)_100%)]"
+  />
+  {/* Layer 3 — Noise overlay (Phase 3) — CRITICAL for hairline-bug prevention */}
+  <div
+    aria-hidden="true"
+    className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.035] mix-blend-overlay"
+  />
+  <Container className="relative z-10 ...">
+    {/* content */}
+  </Container>
+</section>
+```
+
+**Pattern — About (off-center spotlight, biased toward copy-half on the left):**
+
+```tsx
+<div className="relative bg-[#0F1E3D]">
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center_left,rgba(26,46,92,0.6)_0%,rgba(10,20,41,0.95)_100%)]"
+  />
+  <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.035] mix-blend-overlay" />
+  {/* content (relative z-10) */}
+</div>
+```
+
+**Pattern — CTA Section (centered spotlight, same as Hero):**
+
+Same as Hero's Layer 2 — `bg-[radial-gradient(ellipse_at_center,rgba(26,46,92,0.6)_0%,rgba(10,20,41,0.95)_100%)]`.
+
+**Layer stack rules:**
+1. Section bg color (`bg-[#0F1E3D]` for spotlight sections, `bg-[#0A1429]` for flat-deep sections like Recent Work and Footer).
+2. Optional Unsplash image layer (Hero, About image-half).
+3. Spotlight radial-gradient overlay (where applicable).
+4. Optional star-field decorative overlay (Recent Work ONLY).
+5. `noise-overlay` (every dark section — mandatory for hairline-bug prevention).
+6. Content container with `relative z-10`.
+
+Every overlay layer is `pointer-events-none absolute inset-0` so it doesn't block interactions. Content sits ABOVE all overlays via `relative z-10`.
+
+## Glassmorphism subsection (NEW for Template 4)
+
+Applied to **exactly three signature elements**. Not on every card — over-applied = loss of distinctiveness.
+
+**Two standard combinations:**
+
+- **Over-light contexts** (when the parent visual is bright — e.g., Trust Strip floating over Hero's bottom edge, but Hero is dark so this is moot here; Mobile Sticky CTA Bar Call pill is the canonical over-light case when the pill sits over a light section like Services as the user scrolls):
+  - `backdrop-blur-xl bg-white/10 ring-1 ring-white/20` (Trust Strip)
+  - `backdrop-blur-xl bg-white/20 ring-1 ring-white/30` (Mobile Sticky CTA Bar Call pill — slightly higher opacity to anchor against varied bgs)
+- **Over-dark contexts** (when the parent visual is dark — e.g., Hero form card sits over the spotlight-lit Hero bg):
+  - `backdrop-blur-xl bg-slate-900/40 ring-1 ring-white/20` (Hero form card, CTA Section form card)
+
+**Three applied locations only:**
+1. **Hero ContactForm card** — over-dark combination + `shadow-2xl rounded-2xl p-6 md:p-8`.
+2. **Trust Strip** — over-light combination + `rounded-2xl shadow-[0_24px_60px_-12px_rgba(0,0,0,0.6)] border-t-2 border-t-cyan-400/60`.
+3. **Mobile Sticky CTA Bar Call pill** — over-light combination + `shadow-[0_8px_24px_rgba(0,0,0,0.3)]`.
+
+**NOT applied to:** Services cards, Reviews cards, Why Us cards, FAQ cards. Those use **solid white bg with pronounced shadow** (see next subsection). Mixing glass everywhere would dilute the signature.
+
+## Pronounced shadow treatment (Template 4 override of design-reference.md §5 baseline)
+
+Card shadows at ~2x the design-reference.md §5 baseline. Documented override to reinforce the dramatic / spotlight-lit / "objects sit forward of the surface" aesthetic.
+
+| Component | Rest | Hover |
+|---|---|---|
+| Services cards | `shadow-[0_16px_48px_-12px_rgba(15,23,42,0.25)]` | `shadow-[0_24px_64px_-12px_rgba(15,23,42,0.35)] hover:-translate-y-1` |
+| Why Us cards | same | same |
+| Reviews cards | `shadow-[0_16px_48px_-12px_rgba(15,23,42,0.25)]` | (no hover lift on reviews; static) |
+| FAQ items (closed) | `shadow-[0_8px_24px_-12px_rgba(15,23,42,0.2)]` | (subtle ring shift, no lift) |
+| FAQ items (open) | `shadow-[0_8px_24px_rgba(34,211,238,0.1)]` (cyan-tinted) | n/a |
+| Reviews sticky image container | `shadow-[0_24px_64px_-12px_rgba(15,23,42,0.3)]` | n/a |
+| Trust Strip glass container | `shadow-[0_24px_60px_-12px_rgba(0,0,0,0.6)]` | n/a |
+| Hero form card | `shadow-2xl` (Tailwind default — already large) | n/a |
+| Mobile Sticky CTA Bar Call pill | `shadow-[0_8px_24px_rgba(0,0,0,0.3)]` | n/a |
+| Mobile Sticky CTA Bar Quote pill | `shadow-[0_0_30px_rgba(34,211,238,0.5)]` (cyan glow) | n/a |
+| Primary CTA buttons | `shadow-[0_0_40px_rgba(34,211,238,0.4)]` (cyan glow) | `shadow-[0_0_60px_rgba(34,211,238,0.6)]` |
+
+Transitions: `transition-all duration-300` on hover-able cards; `transition-shadow duration-300` on CTA buttons.
+
+## Imagery Rules
+
+Per `agency-context.md` Visual Hard Rule #3 and `design-reference.md` §2.D.
+
+**Hard rule:** No people, no animals, no living things as primary subject. Subjects must be vibrant — no flat grass-only landscape shots even if person-free / animal-free. Every Unsplash render is:
+
+- An architectural element (column, formal entryway, stone wall, pergola, gazebo)
+- A hardscape installation (paver patio, walkway, retaining wall, fire pit without surrounding furniture-with-seating)
+- A water feature (fountain, koi pond shot without fish, reflecting pool)
+- A formal/symmetrical composition (topiary, parterre garden, allée of trees)
+- Lighting drama (sunset / twilight / blue-hour / golden hour / accent lighting on a hardscape subject)
+- Equipment, tools, raw materials, or a branded service truck (About image-half only)
+
+**Template 4 imagery bias: twilight / dusk / blue-hour / accent-lit scenes wherever natural.** The Cinematic Nightscape mood is reinforced when most images are shot at the magic hour. Daytime shots are acceptable for Services-card thumbnails (if any are used) and the Reviews image, but the Hero, About image-half, and every Recent Work slide should lean toward twilight/dusk per the section specs in `__SITE.md__`.
+
+Pre-build self-test for every image: does this image have at least one of [architectural element, hardscape, water feature, lighting drama, formal composition, equipment]? If no → pick another. Even passing `npm run verify:images` does NOT authorize a flat grass field or a flower close-up.
+
+## Image Verification subsection
+
+- Script: `scripts/verify-images.mjs` installed verbatim per `image-verification-prompt.md` (mirror from `template-3/scripts/verify-images.mjs`).
+- Behavior: scans `components/`, `app/`, `lib/`, `hooks/` for `images.unsplash.com` URLs; HEAD-checks each with 10s timeout + 2 retries; up to 8 parallel; exits 0 on all-pass, non-zero with file:line on any fail.
+- Wire-up via `package.json`:
+
+  ```json
+  "scripts": {
+    "prebuild": "node scripts/verify-images.mjs",
+    "verify:images": "node scripts/verify-images.mjs",
+    "build": "next build"
+  }
+  ```
+
+- `npm run build` automatically runs `prebuild`. If any image URL is broken, the build halts before `next build`.
+- Default for every Unsplash render: `<ImageWithFallback>` (from `components/ui/ImageWithFallback.tsx`). NEVER raw `next/image` on Unsplash. Locally-hosted images stay on plain `next/image`.
+
+## Mobile Sticky CTA Bar — Template 4 visual variations
+
+- **Implementation:** Architecture (wrapper structure, z-index ladder, safe-area inset with 1rem floor, pointer-events rules, sizing logic, `md:hidden`, body-level mount) — **verbatim from `mobile-sticky-cta-prompt.md`**. The pattern below documents only the **visual treatment overrides** for Template 4.
+- **Mount location:** Body level in `app/layout.tsx`, immediately after `<main className="pb-20 md:pb-0">{children}</main>`. NOT inside `<Navbar>`. The `pb-20 md:pb-0` on `<main>` gives the sticky bar its clearance above the Footer.
+- **Required CSS custom properties** (declared in `:root` above):
+  - `--color-brand: #0F1E3D` (parent navbar/body brand color)
+  - `--color-brand-accent: #06B6D4` (cyan-500 — Quote pill solid bg uses cyan-400 specifically via Tailwind class for the bright variant; the var is set to cyan-500 for other uses)
+- **Call pill (secondary) — Template 4 GLASSMORPHISM override:**
+  - Bg: `backdrop-blur-xl bg-white/20 ring-1 ring-white/30` instead of the standard solid `bg-white`. The pill is translucent over whatever is behind it — visually consistent with the Hero form card and Trust Strip glass treatment.
+  - Text + icon: `text-white` (the translucent pill needs the white text to read against varied scrolling bgs — every section the pill passes over has sufficient contrast against white).
+  - Shadow: `shadow-[0_8px_24px_rgba(0,0,0,0.3)]` (pronounced, not the standard `shadow-lg`).
+- **Quote pill (primary) — Template 4 CYAN-GLOW override:**
+  - Bg: `bg-cyan-400 text-slate-900` (electric cyan with always-dark-text per WCAG — see Always-Dark-Text-on-Cyan rule above).
+  - Glow shadow: `shadow-[0_0_30px_rgba(34,211,238,0.5)]` — the signature cyan emission.
+- **Z-index:** Pills `z-30` (sits below navbar `z-40`, above main content). Wrapper `pointer-events: none`; each pill `pointer-events: auto`.
+- **Sizing:** Both pills `flex-1` (equal width — adapts iPhone SE / Pro Max).
+- **Visibility:** `md:hidden` (mobile only).
+- **Safe-area:** Bottom inset honored with 1rem floor.
+- **Quote pill href:** `<SmoothLink href="#quote">` (NOT raw `<a>`) — the smooth-scroll system handles the 96px navbar offset. The href matches the Hero ContactForm card's `id="quote"`.
+- **Call pill href:** `<a href="tel:+15551234567">` (raw `<a>` is correct for `tel:` — no scroll behavior).
+
+## Reduced motion
+
+`useReducedMotion()` from framer-motion governs every animated surface. When true:
+- Recent Work carousel transitions: `{ duration: 0 }` (instant scene change).
+- Recent Work carousel drag: disabled.
+- **The Template-4 cyan glow ring transition on the active slide:** also falls back to `{ duration: 0 }` — same guard as the standard caption transition. This prevents the glow from animating on slide change when the user has prefers-reduced-motion set.
+- All scroll-reveal animations: instant reveal.
+- All card hover lifts: skip the translate, keep the shadow change (motion-safe interaction signal).
+
+The same `(prefersReducedMotion || skipAnim) ? { duration: 0 } : { duration: 0.4, ease: 'easeOut' }` guard pattern from `sliding-strip-carousel-prompt.md` applies to the glow ring transition AND the existing caption transition.
+
+## Voice & copy
+
+- **First-person plural** ("we"/"us"/"our crew") in body copy, Services cards, Why Us cards, About paragraphs, CTA copy, Hero subhead.
+- **Singular "I"** appears ONLY in the About attributed quote (`— [Owner Name], Owner`).
+- **No third-person voice** ("the owner has..."/"he believes..."/"she founded...") anywhere.
+- **Action copy on CTAs:** "Get a Free Quote", "Call Now", "Book Now", "Start Your Project". NEVER "Submit", NEVER "Learn More".
+- All Template Build Content Policy placeholders (`Service 1-8`, `Sample Reviewer 1-3`, `Reason 1-3`, `FAQ 1-7`, `About Heading Placeholder`, `[Owner Name]`, `[Template 4]`) are literal — they appear as-typed in the rendered output.
+
+## Adjacency audit (handles dark-dominant pattern — table view)
+
+| From → To | Tones | Mitigation |
+|---|---|---|
+| Hero → Trust Strip | DARK-spotlight → glass-over-DARK | Trust Strip overlaps Hero via `margin-top: -4rem; z-10`. Visually one continuous unit, not adjacent sections. |
+| Trust Strip → Services | DARK → LIGHT-slate-50 | Natural alternation. |
+| Services → Reviews | SLATE-50 → WHITE | Tonal flip; supports section break. |
+| Reviews → Why Us | WHITE → SLATE-50 | Tonal flip. |
+| Why Us → About | LIGHT → DARK-spotlight | Natural alternation. |
+| About → Recent Work | DARK-spotlight → DARK-deepest-flat | About has visible spotlight center-brightening; Recent Work is deepest-midnight flat with star-field overlay + bright carousel images — two distinct dark treatments. Pixel-verify in Phase 4. |
+| Recent Work → FAQ | DARK → LIGHT | Natural alternation. |
+| FAQ → CTA Section | LIGHT → DARK-spotlight | Natural alternation. |
+| CTA Section → Footer | DARK-spotlight → DARK-deepest-flat | **Mitigation:** `border-t border-t-cyan-400/30` thin cyan hairline on Footer wrapper (the cyan equivalent of Template 3's safety-yellow hairline). |
+
+## Dark section hairline mitigation
+
+Per `dark-section-diagonal-bug-prompt.md`. Applied in Phase 3 to all six dark sections: Hero, About, Recent Work, CTA Section, Footer, plus the Trust Strip (it's a glassmorphism layer over Hero's bottom edge but the backdrop-blur surface still benefits from the noise treatment for hairline safety on edge cases).
+
+Pattern (layer stack with spotlight gradient where applicable — see Spotlight Gradient subsection above):
+
+```tsx
+<section className="relative bg-[#0F1E3D]">
+  {/* Optional: Unsplash image layer */}
+  {/* Optional: Spotlight radial gradient overlay */}
+  <div
+    aria-hidden="true"
+    className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.035] mix-blend-overlay"
+  />
+  <Container className="relative z-10 ...">
+    {/* content */}
+  </Container>
+</section>
+```
+
+`.noise-overlay` utility in `app/globals.css` `@layer utilities`:
+
+```css
+@layer utilities {
+  .noise-overlay {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  }
+}
+```
+
+**Phase 4 stricter check for Template 4** (more dark flat area than usual + the spotlight-gradient compatibility): pixel-verify the diagonal hairline is ABSENT on every one of the six dark surfaces (Hero, About, Recent Work, CTA, Footer, Trust Strip glass) at 100% zoom. **Pay extra attention to Recent Work and Footer** — those are flat deepest-midnight without a spotlight gradient to break the flatness; they're the most hairline-prone. Any visible hairline = immediate failure → tighten the fix (steepen gradient and/or bump noise opacity to 0.045).
+
+## Tailwind v3 conventions (matches Templates 2 and 3)
+
+- `globals.css` uses `@tailwind base; @tailwind components; @tailwind utilities;` (NOT Tailwind v4's `@import "tailwindcss"; @theme { ... }`).
+- Color tokens in `:root` (NOT in `@theme`).
+- `tailwind.config.ts` extends `theme.colors` and `theme.fontFamily` to consume the CSS vars.
+- PostCSS config uses `tailwindcss` + `autoprefixer` plugins (NOT `@tailwindcss/postcss`).
+- React 18 + Next 14.
+
+## What Phase 2 (stitch-loop) consumes
+
+This file plus `__SITE.md__` is the spec the stitch-loop reads. The stitch-loop will generate components matching every section's tone (DARK/LIGHT) + composition + content placeholders + image subject + accent usage rules. Post-stitch-loop steps:
+
+1. Template Build Content Policy substitution sweep.
+2. Sweep grep — ZERO realistic-name matches in code.
+3. Resend wiring spec files installed (form runs in preview mode, no POST).
+4. Image verification guardrail installed; `npm run verify:images` exits 0.
+5. Mobile Sticky CTA Bar mounted with Template-4 glassmorphism + cyan-glow overrides.
+6. Base CSS heading rule confirmed font-family-only.
+7. Spotlight gradient layers applied to Hero, About, CTA.
+8. Star-field decorative layer applied to Recent Work.
+9. Glassmorphism applied to Hero form card + Trust Strip only (NOT every card).
+10. Cyan-glow shadows applied to all 13 accent touchpoints.
+11. Build-without-env regression check passes.
