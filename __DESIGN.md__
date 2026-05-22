@@ -1,4 +1,4 @@
-# `__DESIGN.md__` — Landscaping Template 4 (Cinematic Nightscape)
+# `__DESIGN.md__` — Landscaping Template 3 (Cinematic Nightscape)
 
 ## Variation lock (V3 — Black-Tie Speakeasy / Automotive Showroom)
 
@@ -17,20 +17,20 @@ After three iterations the V3 lock is:
 - **About:** Copy LEFT, image RIGHT.
 - **Reviews:** Image LEFT, reviews RIGHT.
 - **Cards:** Glass-on-dark (`bg-slate-900/40 backdrop-blur-sm ring-1 ring-white/10`) with champagne hover edge + glow. **NO tilt treatment.**
-- **Reference templates:** Motorflow (Webflow automotive — `motorflowtemplate.webflow.io`) — Montserrat 900, near-pure-black bgs (`#050607` / `#090a0c` / `#121418`), bright punchy CTA accent, full-bleed automotive photography, cinematic. Kitui Fluid (Squarespace fashion) — oversized heavy display type, sparse impactful layouts, dramatic full-bleed imagery. The Template 4 mood is the hybrid: black-tie speakeasy / luxury automotive showroom.
+- **Reference templates:** Motorflow (Webflow automotive — `motorflowtemplate.webflow.io`) — Montserrat 900, near-pure-black bgs (`#050607` / `#090a0c` / `#121418`), bright punchy CTA accent, full-bleed automotive photography, cinematic. Kitui Fluid (Squarespace fashion) — oversized heavy display type, sparse impactful layouts, dramatic full-bleed imagery. The Template 3 mood is the hybrid: black-tie speakeasy / luxury automotive showroom.
 - **Mood vocabulary:** shadowy, showy, dramatic, fancy, dim, premium-onyx, cinematic.
 
 ## Rationale
 
-Template 1 (Earthy Forest, warm green, light-dominant) and Template 2 (Sage & Stone, muted sage, light-dominant) are quiet/premium/residential. Template 3 (Bold Industrial, slate-charcoal + safety yellow, dark-dominant warm) is loud/industrial/hardscape. Template 4's job in the library is **cool dramatic midnight elegance** — the pick for landscapers positioning around outdoor architectural lighting, luxury hardscape at twilight, blue-hour estate showcases, premium nightscape installations.
+Template 1 (Earthy Forest, warm green, light-dominant) and Template 2 (Sage & Stone, muted sage, light-dominant) are quiet/premium/residential. Template 3 (Bold Industrial, slate-charcoal + safety yellow, dark-dominant warm) is loud/industrial/hardscape. Template 3's job in the library is **cool dramatic midnight elegance** — the pick for landscapers positioning around outdoor architectural lighting, luxury hardscape at twilight, blue-hour estate showcases, premium nightscape installations.
 
 Reference vibe: the photography portfolio of an architectural lighting designer, the case-study landing page of a luxury hotel chain showcasing twilight property shots, the high-end nightclub website. Properties shot at dusk/twilight with dramatic uplighting, deep blue sky, pools and pathways glowing, hardscape carved out by spotlight.
 
 - Palette 6 Navy Professional is `design-reference.md`'s "default safe choice" for plumbers/electricians/HVAC/GCs — but the canonical hex (`#1E3A8A` + `#F97316`) reads as **safe/conservative trust-bank** rather than dramatic cinematic. Deepening the navy to true midnight (`#0F1E3D` to `#0A1429`) and replacing the orange accent with electric cyan reframes the palette as **architectural lighting cinematography** rather than corporate trust. The "Navy Professional" base is what keeps it visually credible; the deepening and cyan override are what make it distinctive.
 - DM Serif Display at oversized display sizes (Hero H1 at `text-7xl md:text-8xl lg:text-9xl` — bigger than every prior template) gives the "movie poster" feel. The sharp-modern serif character reads as editorial-cinematic, not antique-traditional.
-- DM Sans for body keeps reading clean and geometric without the warmth a humanist sans would add — Template 4 is COOL.
-- Dark-dominant composition (5 dark sections + Footer = 6 of 10) is even more dark-heavy than Template 3, but the dark treatment differs: Template 3 used flat dark slate + safety-yellow accents; Template 4 uses spotlight radial gradients + glassmorphism overlays + electric-cyan glow effects. Different dark idiom entirely.
-- Maximizing differentiation: at a glance in the library grid, Template 4 reads as "the cyan-on-deep-blue one." Every other template (1: green, 2: sage, 3: yellow) has a warm accent or muted palette. Template 4 is the cool/electric outlier.
+- DM Sans for body keeps reading clean and geometric without the warmth a humanist sans would add — Template 3 is COOL.
+- Dark-dominant composition (5 dark sections + Footer = 6 of 10) is even more dark-heavy than Template 3, but the dark treatment differs: Template 3 used flat dark slate + safety-yellow accents; Template 3 uses spotlight radial gradients + glassmorphism overlays + electric-cyan glow effects. Different dark idiom entirely.
+- Maximizing differentiation: at a glance in the library grid, Template 3 reads as "the cyan-on-deep-blue one." Every other template (1: green, 2: sage, 3: yellow) has a warm accent or muted palette. Template 3 is the cool/electric outlier.
 
 ## Color tokens
 
@@ -128,7 +128,7 @@ NOT allowed:
   - H4: `text-xl font-semibold` (DM Sans bold for sub-headings; H4 is the only level that doesn't use DM Serif Display).
   - H3: `text-2xl` (DM Serif Display).
   - H2: `text-3xl md:text-4xl lg:text-5xl tracking-tight` (DM Serif Display).
-  - **H1 — Hero hero-scale, OVERSIZED for Template 4:** `text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[1.02] tracking-tight` (DM Serif Display). The xl:9xl tier is what gives Hero its movie-poster feel — explicitly bigger than every prior template's H1 max size.
+  - **H1 — Hero hero-scale, OVERSIZED for Template 3:** `text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[1.02] tracking-tight` (DM Serif Display). The xl:9xl tier is what gives Hero its movie-poster feel — explicitly bigger than every prior template's H1 max size.
 - **Line length:** body capped at `max-w-prose` or `max-w-[65ch]`.
 - **Form inputs:** minimum `text-base` (16px) to prevent iOS zoom-on-focus.
 
@@ -152,7 +152,7 @@ In `app/globals.css`:
 
 This rule exists because if `color: #0F172A` were set globally on headings, dark-section headings would render as unreadable dark slate on dark midnight. The agency has been bitten by this before; the rule is HARD.
 
-## Spotlight Gradient subsection (NEW for Template 4)
+## Spotlight Gradient subsection (NEW for Template 3)
 
 The signature visual mechanic of dark-spotlight sections. Applied to Hero, About, and CTA Section. (Recent Work and Footer use flat deepest-midnight backgrounds without spotlight — they're meant to feel atmospheric and uniformly dark, not lit from one source.)
 
@@ -210,7 +210,7 @@ Same as Hero's Layer 2 — `bg-[radial-gradient(ellipse_at_center,rgba(26,46,92,
 
 Every overlay layer is `pointer-events-none absolute inset-0` so it doesn't block interactions. Content sits ABOVE all overlays via `relative z-10`.
 
-## Glassmorphism subsection (NEW for Template 4)
+## Glassmorphism subsection (NEW for Template 3)
 
 Applied to **exactly three signature elements**. Not on every card — over-applied = loss of distinctiveness.
 
@@ -229,7 +229,7 @@ Applied to **exactly three signature elements**. Not on every card — over-appl
 
 **NOT applied to:** Services cards, Reviews cards, Why Us cards, FAQ cards. Those use **solid white bg with pronounced shadow** (see next subsection). Mixing glass everywhere would dilute the signature.
 
-## Pronounced shadow treatment (Template 4 override of design-reference.md §5 baseline)
+## Pronounced shadow treatment (Template 3 override of design-reference.md §5 baseline)
 
 Card shadows at ~2x the design-reference.md §5 baseline. Documented override to reinforce the dramatic / spotlight-lit / "objects sit forward of the surface" aesthetic.
 
@@ -262,7 +262,7 @@ Per `agency-context.md` Visual Hard Rule #3 and `design-reference.md` §2.D.
 - Lighting drama (sunset / twilight / blue-hour / golden hour / accent lighting on a hardscape subject)
 - Equipment, tools, raw materials, or a branded service truck (About image-half only)
 
-**Template 4 imagery bias: twilight / dusk / blue-hour / accent-lit scenes wherever natural.** The Cinematic Nightscape mood is reinforced when most images are shot at the magic hour. Daytime shots are acceptable for Services-card thumbnails (if any are used) and the Reviews image, but the Hero, About image-half, and every Recent Work slide should lean toward twilight/dusk per the section specs in `__SITE.md__`.
+**Template 3 imagery bias: twilight / dusk / blue-hour / accent-lit scenes wherever natural.** The Cinematic Nightscape mood is reinforced when most images are shot at the magic hour. Daytime shots are acceptable for Services-card thumbnails (if any are used) and the Reviews image, but the Hero, About image-half, and every Recent Work slide should lean toward twilight/dusk per the section specs in `__SITE.md__`.
 
 Pre-build self-test for every image: does this image have at least one of [architectural element, hardscape, water feature, lighting drama, formal composition, equipment]? If no → pick another. Even passing `npm run verify:images` does NOT authorize a flat grass field or a flower close-up.
 
@@ -283,18 +283,18 @@ Pre-build self-test for every image: does this image have at least one of [archi
 - `npm run build` automatically runs `prebuild`. If any image URL is broken, the build halts before `next build`.
 - Default for every Unsplash render: `<ImageWithFallback>` (from `components/ui/ImageWithFallback.tsx`). NEVER raw `next/image` on Unsplash. Locally-hosted images stay on plain `next/image`.
 
-## Mobile Sticky CTA Bar — Template 4 visual variations
+## Mobile Sticky CTA Bar — Template 3 visual variations
 
-- **Implementation:** Architecture (wrapper structure, z-index ladder, safe-area inset with 1rem floor, pointer-events rules, sizing logic, `md:hidden`, body-level mount) — **verbatim from `mobile-sticky-cta-prompt.md`**. The pattern below documents only the **visual treatment overrides** for Template 4.
+- **Implementation:** Architecture (wrapper structure, z-index ladder, safe-area inset with 1rem floor, pointer-events rules, sizing logic, `md:hidden`, body-level mount) — **verbatim from `mobile-sticky-cta-prompt.md`**. The pattern below documents only the **visual treatment overrides** for Template 3.
 - **Mount location:** Body level in `app/layout.tsx`, immediately after `<main className="pb-20 md:pb-0">{children}</main>`. NOT inside `<Navbar>`. The `pb-20 md:pb-0` on `<main>` gives the sticky bar its clearance above the Footer.
 - **Required CSS custom properties** (declared in `:root` above):
   - `--color-brand: #0F1E3D` (parent navbar/body brand color)
   - `--color-brand-accent: #06B6D4` (cyan-500 — Quote pill solid bg uses cyan-400 specifically via Tailwind class for the bright variant; the var is set to cyan-500 for other uses)
-- **Call pill (secondary) — Template 4 GLASSMORPHISM override:**
+- **Call pill (secondary) — Template 3 GLASSMORPHISM override:**
   - Bg: `backdrop-blur-xl bg-white/20 ring-1 ring-white/30` instead of the standard solid `bg-white`. The pill is translucent over whatever is behind it — visually consistent with the Hero form card and Trust Strip glass treatment.
   - Text + icon: `text-white` (the translucent pill needs the white text to read against varied scrolling bgs — every section the pill passes over has sufficient contrast against white).
   - Shadow: `shadow-[0_8px_24px_rgba(0,0,0,0.3)]` (pronounced, not the standard `shadow-lg`).
-- **Quote pill (primary) — Template 4 CYAN-GLOW override:**
+- **Quote pill (primary) — Template 3 CYAN-GLOW override:**
   - Bg: `bg-cyan-400 text-slate-900` (electric cyan with always-dark-text per WCAG — see Always-Dark-Text-on-Cyan rule above).
   - Glow shadow: `shadow-[0_0_30px_rgba(34,211,238,0.5)]` — the signature cyan emission.
 - **Z-index:** Pills `z-30` (sits below navbar `z-40`, above main content). Wrapper `pointer-events: none`; each pill `pointer-events: auto`.
@@ -309,7 +309,7 @@ Pre-build self-test for every image: does this image have at least one of [archi
 `useReducedMotion()` from framer-motion governs every animated surface. When true:
 - Recent Work carousel transitions: `{ duration: 0 }` (instant scene change).
 - Recent Work carousel drag: disabled.
-- **The Template-4 cyan glow ring transition on the active slide:** also falls back to `{ duration: 0 }` — same guard as the standard caption transition. This prevents the glow from animating on slide change when the user has prefers-reduced-motion set.
+- **The template-3 cyan glow ring transition on the active slide:** also falls back to `{ duration: 0 }` — same guard as the standard caption transition. This prevents the glow from animating on slide change when the user has prefers-reduced-motion set.
 - All scroll-reveal animations: instant reveal.
 - All card hover lifts: skip the translate, keep the shadow change (motion-safe interaction signal).
 
@@ -321,7 +321,7 @@ The same `(prefersReducedMotion || skipAnim) ? { duration: 0 } : { duration: 0.4
 - **Singular "I"** appears ONLY in the About attributed quote (`— [Owner Name], Owner`).
 - **No third-person voice** ("the owner has..."/"he believes..."/"she founded...") anywhere.
 - **Action copy on CTAs:** "Get a Free Quote", "Call Now", "Book Now", "Start Your Project". NEVER "Submit", NEVER "Learn More".
-- All Template Build Content Policy placeholders (`Service 1-8`, `Sample Reviewer 1-3`, `Reason 1-3`, `FAQ 1-7`, `About Heading Placeholder`, `[Owner Name]`, `[Template 4]`) are literal — they appear as-typed in the rendered output.
+- All Template Build Content Policy placeholders (`Service 1-8`, `Sample Reviewer 1-3`, `Reason 1-3`, `FAQ 1-7`, `About Heading Placeholder`, `[Owner Name]`, `[TEMPLATE 3]`) are literal — they appear as-typed in the rendered output.
 
 ## Adjacency audit (handles dark-dominant pattern — table view)
 
@@ -367,7 +367,7 @@ Pattern (layer stack with spotlight gradient where applicable — see Spotlight 
 }
 ```
 
-**Phase 4 stricter check for Template 4** (more dark flat area than usual + the spotlight-gradient compatibility): pixel-verify the diagonal hairline is ABSENT on every one of the six dark surfaces (Hero, About, Recent Work, CTA, Footer, Trust Strip glass) at 100% zoom. **Pay extra attention to Recent Work and Footer** — those are flat deepest-midnight without a spotlight gradient to break the flatness; they're the most hairline-prone. Any visible hairline = immediate failure → tighten the fix (steepen gradient and/or bump noise opacity to 0.045).
+**Phase 4 stricter check for Template 3** (more dark flat area than usual + the spotlight-gradient compatibility): pixel-verify the diagonal hairline is ABSENT on every one of the six dark surfaces (Hero, About, Recent Work, CTA, Footer, Trust Strip glass) at 100% zoom. **Pay extra attention to Recent Work and Footer** — those are flat deepest-midnight without a spotlight gradient to break the flatness; they're the most hairline-prone. Any visible hairline = immediate failure → tighten the fix (steepen gradient and/or bump noise opacity to 0.045).
 
 ## Tailwind v3 conventions (matches Templates 2 and 3)
 
@@ -385,7 +385,7 @@ This file plus `__SITE.md__` is the spec the stitch-loop reads. The stitch-loop 
 2. Sweep grep — ZERO realistic-name matches in code.
 3. Resend wiring spec files installed (form runs in preview mode, no POST).
 4. Image verification guardrail installed; `npm run verify:images` exits 0.
-5. Mobile Sticky CTA Bar mounted with Template-4 glassmorphism + cyan-glow overrides.
+5. Mobile Sticky CTA Bar mounted with template-3 glassmorphism + cyan-glow overrides.
 6. Base CSS heading rule confirmed font-family-only.
 7. Spotlight gradient layers applied to Hero, About, CTA.
 8. Star-field decorative layer applied to Recent Work.

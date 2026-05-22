@@ -46,7 +46,7 @@ export default function ContactForm() {
     if (process.env.NEXT_PUBLIC_BUILD_MODE === "preview") {
       setStatus("success");
       setStatusMessage(
-        "This form goes live when [Template 4] launches. For now this is a preview - no email will be sent."
+        "This form goes live when [TEMPLATE 3] launches. For now this is a preview - no email will be sent."
       );
       setValues(INITIAL);
       return;

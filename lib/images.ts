@@ -13,6 +13,25 @@ export const IMAGES = {
   },
 } as const;
 
+export const WHY_US = [
+  {
+    src: "https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?w=1800&q=80",
+    alt: "Master craftsman hand-finishing a stone hardscape detail",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1800&q=80",
+    alt: "Premium natural stone and aged timber materials staged on site",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1601128533718-374ffcca299b?w=1800&q=80",
+    alt: "Site plans and design drawings laid out for a landscape project",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1800&q=80",
+    alt: "Mature, fully realized formal landscape installation",
+  },
+] as const;
+
 export const RECENT_WORK = [
   {
     src: "https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?w=1600&q=80",

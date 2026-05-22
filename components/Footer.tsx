@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-14">
           <div className="lg:col-span-1">
             <p className="font-display font-bold uppercase text-white text-2xl tracking-wide mb-4">
-              [Template 4]
+              [TEMPLATE 3]
             </p>
             <p className="text-white/55 text-sm leading-relaxed mb-6 max-w-xs">
               Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
@@ -132,7 +132,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-white/45 text-xs">
-            &copy; {year} [Template 4]. All rights reserved.
+            &copy; {year} [TEMPLATE 3]. All rights reserved.
           </p>
           <p className="text-white/35 text-[11px] uppercase tracking-[0.25em]">
             Lorem ipsum dolor

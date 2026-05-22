@@ -1,24 +1,41 @@
-import { ShieldCheck, Clock, ThumbsUp } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
+import { WHY_US } from "@/lib/images";
 
 const REASONS = [
   {
-    icon: ShieldCheck,
+    number: "01",
     title: "Reason 1",
-    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.",
+    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua veniam quis nostrud.",
+    image: WHY_US[0],
   },
   {
-    icon: Clock,
+    number: "02",
     title: "Reason 2",
-    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation.",
+    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua nostrud exercitation.",
+    image: WHY_US[1],
   },
   {
-    icon: ThumbsUp,
+    number: "03",
     title: "Reason 3",
-    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua veniam.",
+    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua excepteur sunt.",
+    image: WHY_US[2],
+  },
+  {
+    number: "04",
+    title: "Reason 4",
+    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua officia deserunt.",
+    image: WHY_US[3],
   },
 ];
 
 export default function WhyUs() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = REASONS[activeIndex];
+
   return (
     <section className="relative bg-gradient-to-b from-[#1F1F25] to-[#0F0F14] border-t border-[#E8D4A3]/15 py-20 md:py-24 lg:py-28 overflow-hidden">
       <div
@@ -46,22 +63,118 @@ export default function WhyUs() {
           </p>
         </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-          {REASONS.map(({ icon: Icon, title, body }) => (
-            <li
-              key={title}
-              className="group relative bg-black/30 backdrop-blur-sm rounded-md p-7 md:p-8 ring-1 ring-white/10 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-black/45 hover:ring-[#D4B679]/40 hover:shadow-[0_24px_64px_-12px_rgba(0,0,0,0.7),0_0_40px_rgba(232,212,163,0.15)]"
-            >
-              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-md bg-[#D4B679]/12 text-[#E8D4A3] ring-1 ring-[#E8D4A3]/20 transition-colors duration-300 group-hover:bg-[#D4B679]/20">
-                <Icon className="h-7 w-7" strokeWidth={2} aria-hidden="true" />
-              </div>
-              <h3 className="font-display font-semibold uppercase text-white text-xl mb-3 leading-tight tracking-wide">
-                {title}
-              </h3>
-              <p className="text-white/60 leading-relaxed">{body}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-14 items-stretch lg:min-h-[560px]">
+          {/* Left: vertical tab list with inline expanding body */}
+          <ul role="tablist" aria-orientation="vertical" className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute left-0 top-0 bottom-0 w-px bg-white/8"
+            />
+            {REASONS.map((reason, i) => {
+              const isActive = i === activeIndex;
+              return (
+                <li key={reason.number} className="relative border-b border-white/8 last:border-b-0">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls="why-us-panel"
+                    onClick={() => setActiveIndex(i)}
+                    className="group relative w-full text-left pt-6 md:pt-7 pb-5 md:pb-6 pl-6 md:pl-8 pr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8D4A3]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#15151A]"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={[
+                        "absolute left-0 top-8 w-[2px] bg-[#E8D4A3] transition-all duration-500 ease-out",
+                        isActive
+                          ? "opacity-100 shadow-[0_0_16px_rgba(232,212,163,0.7)]"
+                          : "h-0 opacity-0",
+                      ].join(" ")}
+                      style={isActive ? { height: "calc(100% - 2.5rem)" } : undefined}
+                    />
+                    <div className="flex items-baseline gap-5 md:gap-6">
+                      <span
+                        className={[
+                          "font-body text-xs tracking-[0.3em] font-semibold transition-colors duration-300",
+                          isActive ? "text-[#E8D4A3]" : "text-white/30 group-hover:text-white/50",
+                        ].join(" ")}
+                      >
+                        {reason.number}
+                      </span>
+                      <h3
+                        className={[
+                          "font-display font-semibold uppercase tracking-wide leading-tight transition-colors duration-300",
+                          "text-2xl md:text-3xl",
+                          isActive
+                            ? "text-white"
+                            : "text-white/35 group-hover:text-white/65",
+                        ].join(" ")}
+                      >
+                        {reason.title}
+                      </h3>
+                    </div>
+                  </button>
+
+                  {/* Inline expanding body — only the active item shows it */}
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.div
+                        key="body"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+                          opacity: { duration: 0.3, ease: "easeOut" },
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-[calc(1.5rem+1.5rem)] md:pl-[calc(2rem+1.75rem)] pr-2 pb-6 md:pb-7 -mt-1">
+                          <p className="text-white/70 leading-relaxed text-[15px] max-w-prose">
+                            {reason.body}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Right: clean full-bleed image, no overlay */}
+          <div
+            id="why-us-panel"
+            role="tabpanel"
+            aria-live="polite"
+            className="relative h-full aspect-[4/5] lg:aspect-auto lg:min-h-0 overflow-hidden rounded-md ring-1 ring-white/10 shadow-[0_28px_80px_-20px_rgba(0,0,0,0.7)]"
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, scale: 1.02 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.005 }}
+                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0"
+              >
+                <ImageWithFallback
+                  src={active.image.src}
+                  alt={active.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 55vw, 100vw"
+                  className="object-cover"
+                  priority={false}
+                />
+                {/* Subtle vignette only — no text overlay */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_60%,rgba(0,0,0,0.35)_100%)]"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-# `PLACEHOLDERS.md` — Landscaping Template 4 (Cinematic Nightscape)
+# `PLACEHOLDERS.md` — Landscaping Template 3 (Cinematic Nightscape)
 
 > **Audience:** the developer running Phase 7 production migration after a real client has signed and forked this template. This file is the punch-list of every literal placeholder the template ships with. Replace each value, run `npm run verify:images` (and the final sweep grep at the end of this file), and the migration is data-complete.
 
@@ -26,7 +26,7 @@ Every literal placeholder string used in the template code. All status: **TRANSI
 
 | Placeholder | File(s) | Production migration action |
 |---|---|---|
-| `[Template 4]` | `components/Navbar.tsx` (brand mark + aria-label), `components/Footer.tsx` (brand mark, copyright), `app/layout.tsx` (title metadata), `components/ContactForm.tsx` (preview-mode message) | Replace with real business name (display) and the SEO-appropriate site title. |
+| `[TEMPLATE 3]` | `components/Navbar.tsx` (brand mark + aria-label), `components/Footer.tsx` (brand mark, copyright), `app/layout.tsx` (title metadata), `components/ContactForm.tsx` (preview-mode message) | Replace with real business name (display) and the SEO-appropriate site title. |
 | `(555) 123-4567` (display) + `tel:+15551234567` (href) | `components/Navbar.tsx` (no direct phone — Get Quote routes to form), `components/MobileStickyCtaBar.tsx` (Call pill href), `components/CtaSection.tsx` (emerald phone block, click-to-call), `components/Footer.tsx` (phone link) | Replace both display string and `tel:+1...` E.164 href consistently. Click-to-call must work on mobile. |
 | `contact@placeholder.com` | `components/Footer.tsx` mailto | See Item 1b above. |
 | `123 Sample Street, Sample Town, ST 00000` | `components/Footer.tsx` address block | Replace with real client business address. |
@@ -46,7 +46,7 @@ Every literal placeholder string used in the template code. All status: **TRANSI
 After completing the migration, run from the project root to confirm no placeholders are left in code:
 
 ```
-grep -rE "Sample Reviewer|Sample Town|Sample Service|Sample Date|\[Template 4\]|\[Owner Name\]|About Heading Placeholder|FAQ [1-7]\b|Reason [1-3]\b|Service [1-8]\b|placeholder\.com|555-?\)?\s?\(?123-4567|tel:\+15551234567" components/ app/
+grep -rE "Sample Reviewer|Sample Town|Sample Service|Sample Date|\[Template 3\]|\[Owner Name\]|About Heading Placeholder|FAQ [1-7]\b|Reason [1-3]\b|Service [1-8]\b|placeholder\.com|555-?\)?\s?\(?123-4567|tel:\+15551234567" components/ app/
 ```
 
 Expected after a complete migration: **ZERO matches**. Any lingering hit is a placeholder the migration missed.

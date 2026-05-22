@@ -1,10 +1,10 @@
-# `__SITE.md__` — Landscaping Template 4 (Cinematic Nightscape)
+# `__SITE.md__` — Landscaping Template 3 (Cinematic Nightscape)
 
 > Build type: **TEMPLATE**. Template Build Content Policy applies to every policy-governed section. The form ships in **preview mode** (`NEXT_PUBLIC_BUILD_MODE=preview`) — no Resend wiring runs end-to-end, ContactForm short-circuits at the client and renders the preview-launching message. All copy is generic lorem ipsum or policy-mandated placeholders. Form deliverability (`CLIENT_NOTIFICATION_EMAIL`, `CLIENT_BUSINESS_NAME`) intentionally blank — wired only at Phase 7 production migration.
 
 ## Variation lock (V3.4 — Black-Tie Speakeasy / Automotive Showroom)
 
-**All-dark cinematic. Near-pure-black + champagne + DM Sans single-typeface.** Reference templates: Motorflow (Webflow automotive — `motorflowtemplate.webflow.io`) and Kitui Fluid (Squarespace fashion). Single-typeface system: **DM Sans 400/500/600/700** for both body AND display — display variant distinguished only by uppercase + `tracking-wide` letter-spacing + larger size. Mood comes from composition, not font personality. Near-pure-black backgrounds (`#0A0A0C` base / `#050607` deepest / `#1A1A1F` lifted), champagne accent (`#D4B679` solid / `#E8D4A3` glow) replacing the original cyan, ALL 10 sections dark with varied dark treatments (spotlight gradients on Hero/About/CTA, star-field decorative overlays on Services/Recent Work, lifted-midnight on Why Us, subtle gradient on Reviews/Footer/Recent Work). Mood vocabulary: shadowy, showy, dramatic, fancy, dim, premium-onyx, cinematic. V3.2 pivoted from V3.1's Big Shoulders Display — the condensed-architectural letterforms were "doing too much"; the single-typeface DM Sans approach lets the typography recede and the composition carry the elegance (Kitui Fluid's approach). V3.3 added **ambient background photography to every content section** (Services, WhyUs, FAQ, CtaSection, Footer), but the photos were invisible at opacity 0.10–0.22 against the 0.85–0.98 darkening overlay. V3.4 made the atmosphere actually VISIBLE: photo opacity raised to 0.30–0.40, darkening overlays dropped to 0.60–0.78, section base gradients varied perceptibly across the tone map (Services lifted-slate `#15151A`→`#0A0A0C`, WhyUs more-lifted-gray `#1F1F25`→`#0F0F14`, FAQ lifted-cool `#15151A`→`#080A0D`, CTA dramatic `#0A0A0C`→`#020203`, Footer abyss `#020203`→`#000000`), champagne radial glow blobs bumped from 0.03–0.05 → 0.08–0.12 opacity at 60–70% spread, noise overlay 0.04 → 0.06 site-wide. Scrolling through the page now reads as moving through visibly different rooms with different ambient lighting — fixing the "sections felt flat / nothing going on in the background" feedback from V3.3. This adds the textural depth missing from uniform dark gradients, matching Motorflow's automotive-silhouette-through-darkness DNA and Kitui Fluid's editorial-photography-as-ambient-texture pattern. Visually distinct from Templates 1 (earthy daylight), 2 (sage), 3 (industrial slate-yellow) — Template 4 is the cool/electric outlier turned all-dark luxury.
+**All-dark cinematic. Near-pure-black + champagne + DM Sans single-typeface.** Reference templates: Motorflow (Webflow automotive — `motorflowtemplate.webflow.io`) and Kitui Fluid (Squarespace fashion). Single-typeface system: **DM Sans 400/500/600/700** for both body AND display — display variant distinguished only by uppercase + `tracking-wide` letter-spacing + larger size. Mood comes from composition, not font personality. Near-pure-black backgrounds (`#0A0A0C` base / `#050607` deepest / `#1A1A1F` lifted), champagne accent (`#D4B679` solid / `#E8D4A3` glow) replacing the original cyan, ALL 10 sections dark with varied dark treatments (spotlight gradients on Hero/About/CTA, star-field decorative overlays on Services/Recent Work, lifted-midnight on Why Us, subtle gradient on Reviews/Footer/Recent Work). Mood vocabulary: shadowy, showy, dramatic, fancy, dim, premium-onyx, cinematic. V3.2 pivoted from V3.1's Big Shoulders Display — the condensed-architectural letterforms were "doing too much"; the single-typeface DM Sans approach lets the typography recede and the composition carry the elegance (Kitui Fluid's approach). V3.3 added **ambient background photography to every content section** (Services, WhyUs, FAQ, CtaSection, Footer), but the photos were invisible at opacity 0.10–0.22 against the 0.85–0.98 darkening overlay. V3.4 made the atmosphere actually VISIBLE: photo opacity raised to 0.30–0.40, darkening overlays dropped to 0.60–0.78, section base gradients varied perceptibly across the tone map (Services lifted-slate `#15151A`→`#0A0A0C`, WhyUs more-lifted-gray `#1F1F25`→`#0F0F14`, FAQ lifted-cool `#15151A`→`#080A0D`, CTA dramatic `#0A0A0C`→`#020203`, Footer abyss `#020203`→`#000000`), champagne radial glow blobs bumped from 0.03–0.05 → 0.08–0.12 opacity at 60–70% spread, noise overlay 0.04 → 0.06 site-wide. Scrolling through the page now reads as moving through visibly different rooms with different ambient lighting — fixing the "sections felt flat / nothing going on in the background" feedback from V3.3. This adds the textural depth missing from uniform dark gradients, matching Motorflow's automotive-silhouette-through-darkness DNA and Kitui Fluid's editorial-photography-as-ambient-texture pattern. Visually distinct from Templates 1 (earthy daylight), 2 (sage), 3 (industrial slate-yellow) — Template 3 is the cool/electric outlier turned all-dark luxury.
 
 Three signature visual mechanics:
 
@@ -29,7 +29,7 @@ Three signature visual mechanics:
 
 ## Adjacency audit
 
-Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer makes 6. Light sections (Services, Reviews, Why Us, FAQ) act as visual breathers between dark slabs. Sequence: Hero(D-spotlight) → Trust(glass-over-dark) → Services(L) → Reviews(L-gray) → Why Us(L) → About(D-spotlight) → Recent Work(D-deepest) → FAQ(L) → CTA(D-spotlight) → Footer(D-deepest).
+Template 3 is **dark-dominant** — 5 of 10 main sections are dark + Footer makes 6. Light sections (Services, Reviews, Why Us, FAQ) act as visual breathers between dark slabs. Sequence: Hero(D-spotlight) → Trust(glass-over-dark) → Services(L) → Reviews(L-gray) → Why Us(L) → About(D-spotlight) → Recent Work(D-deepest) → FAQ(L) → CTA(D-spotlight) → Footer(D-deepest).
 
 | From → To | Tones | Mitigation |
 |---|---|---|
@@ -50,7 +50,7 @@ Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer make
 - **Architecture:** Fixed, transparent-at-top, scroll-driven (per `transparent-navbar-prompt.md`, applied in Phase 3).
 - **At-top state:** `bg-transparent` + white text/links. The cyan-glow Get Quote button retains its glow even at-top (the CTA never blends in — it's always the highest-contrast moment on the page). Variant: dark hero (Hero's bg is deep midnight + spotlight gradient).
 - **Scrolled state (>16px):** `bg-[#0F1E3D]/95 backdrop-blur shadow-sm` + white text/links + cyan-glow Get Quote button (`bg-cyan-400 text-slate-900 shadow-[0_0_30px_rgba(34,211,238,0.4)]`).
-- **Brand mark:** Text-only `[Template 4]` in DM Serif Display weight 400 at `text-xl md:text-2xl`. **NO Lucide icon.**
+- **Brand mark:** Text-only `[TEMPLATE 3]` in DM Serif Display weight 400 at `text-xl md:text-2xl`. **NO Lucide icon.**
 - **Z-index:** `z-40` (above Mobile Sticky CTA Bar's `z-30`; mobile menu open covers the sticky bar).
 - **Nav links:** Home, Services, About, Contact. Hash links via `<SmoothLink>` in Phase 3. At-top text-white; scrolled text-white (Navbar bg becomes opaque midnight so white still reads). Link hovers `hover:text-cyan-400`.
 - **Mobile:** Hamburger menu slides open from top, covers viewport including sticky bar.
@@ -58,15 +58,15 @@ Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer make
 ## Mobile Sticky CTA Bar
 
 - **Mount:** Body level in `app/layout.tsx`, immediately after `<main className="pb-20 md:pb-0">{children}</main>`. NOT inside `<Navbar>`.
-- **Implementation:** Wrapper structure, z-index ladder, safe-area inset (1rem floor), pointer-events rules — **verbatim from `mobile-sticky-cta-prompt.md`**. Only the visual treatment of the two pills changes for Template 4.
+- **Implementation:** Wrapper structure, z-index ladder, safe-area inset (1rem floor), pointer-events rules — **verbatim from `mobile-sticky-cta-prompt.md`**. Only the visual treatment of the two pills changes for Template 3.
 - **Visibility:** `md:hidden`. Wrapper `pointer-events: none`; each pill `pointer-events: auto`. `z-30`.
-- **Call pill (secondary) — Template 4 glassmorphism override:**
+- **Call pill (secondary) — Template 3 glassmorphism override:**
   - Bg: `backdrop-blur-xl bg-white/20 ring-1 ring-white/30` instead of the standard solid white.
   - Text + icon: `text-white` (translucent pill over varied bg — white reads as long as the underlying section has sufficient contrast, which holds on every dark section the pill overlaps; the white/20 bg is enough to anchor the pill against the bright Services/FAQ light sections too).
   - Shadow: `shadow-[0_8px_24px_rgba(0,0,0,0.3)]` (pronounced shadow, not the standard `shadow-lg`).
   - Icon: Lucide Phone, `strokeWidth={2}`.
   - Href: `<a href="tel:+15551234567">` (raw `<a>` — `tel:` doesn't smooth-scroll).
-- **Quote pill (primary) — Template 4 cyan-glow override:**
+- **Quote pill (primary) — Template 3 cyan-glow override:**
   - Bg: `bg-cyan-400 text-slate-900` (electric cyan with always-dark-text per WCAG — see Always-Dark-Text-on-Cyan Rule in `__DESIGN.md__`).
   - Glow shadow: `shadow-[0_0_30px_rgba(34,211,238,0.5)]` — the signature cyan emission.
   - Icon: Sparkle or ChevronRight, `text-slate-900`, `strokeWidth={2}`.
@@ -133,7 +133,7 @@ Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer make
     - Rest: `bg-white rounded-xl p-6 shadow-[0_16px_48px_-12px_rgba(15,23,42,0.25)] ring-1 ring-slate-200/60 transition-all duration-300`.
     - Hover: `hover:shadow-[0_24px_64px_-12px_rgba(15,23,42,0.35)] hover:-translate-y-1 hover:ring-1 hover:ring-cyan-500/30`.
     - On hover, icon container fades to deeper cyan tint per Visual Hard Rule #2: `group-hover:bg-cyan-100 group-hover:text-cyan-700`.
-  - **NO tilted-card treatment** — that was Template 3's visual mechanic. Template 4's mechanic is pronounced shadow + cyan-edge-glow on hover.
+  - **NO tilted-card treatment** — that was Template 3's visual mechanic. Template 3's mechanic is pronounced shadow + cyan-edge-glow on hover.
 - **Toggle:** Default 3 visible (`idx < 3`); "See All Services" button below grid reveals the other 5. Button: `inline-flex items-center gap-2 text-cyan-600 underline underline-offset-4 font-medium hover:text-cyan-700`. State: `useState<boolean>(false)`.
 
 ## Reviews
@@ -214,9 +214,9 @@ Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer make
   - H2: DM Serif Display weight 400 `text-4xl md:text-5xl lg:text-6xl tracking-tight inline-block pb-2 border-b-2 border-b-cyan-400`. Inherits white. The cyan underline IS one of the 13 cyan touchpoints.
   - 1-sentence lead `text-slate-300 mt-4`.
 - **Carousel architecture: VERBATIM from `sliding-strip-carousel-prompt.md`.** No deviation in the underlying mechanics — sliding-strip + virtualIndex + skipAnim + clone-and-snap wrap-around loop architecture is identical to Templates 1, 2, 3. Library: `framer-motion`. NO autoplay. `useReducedMotion()` honored. `motion.div drag="x" dragMomentum={false} dragElastic={0.2}`. CSS `touch-action: pan-y`. Cursor `cursor-grab active:cursor-grabbing select-none`. **Every `<Image>` has `draggable={false}`.**
-- **Template-4 visual treatments LAYERED on top of the verbatim carousel (do NOT modify the underlying architecture):**
+- **template-3 visual treatments LAYERED on top of the verbatim carousel (do NOT modify the underlying architecture):**
   - **(a) Per-slide dark vignette overlay:** Inside every slide's wrapper, ABOVE the Image but BELOW any caption: `<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.6)_100%)] pointer-events-none rounded-xl">`. Edges of every slide darken into the surrounding midnight — gives the carousel its cinematic frame.
-  - **(b) Active slide cyan glow + ring (peeks have NEITHER):** Active slot adds `ring-2 ring-cyan-400 shadow-[0_0_60px_rgba(34,211,238,0.4)]`. Peek slots have no ring and no glow. The ring/glow transitions smoothly when slides change — animate via framer-motion with the same `(prefersReducedMotion || skipAnim) ? { duration: 0 } : { duration: 0.4, ease: 'easeOut' }` guard pattern the carousel uses for caption transitions. **CRITICAL:** the `skipAnim` guard prevents the glow from flicker-snapping at the wrap-around seam (the most likely Template-4-specific regression — verify in Phase 4).
+  - **(b) Active slide cyan glow + ring (peeks have NEITHER):** Active slot adds `ring-2 ring-cyan-400 shadow-[0_0_60px_rgba(34,211,238,0.4)]`. Peek slots have no ring and no glow. The ring/glow transitions smoothly when slides change — animate via framer-motion with the same `(prefersReducedMotion || skipAnim) ? { duration: 0 } : { duration: 0.4, ease: 'easeOut' }` guard pattern the carousel uses for caption transitions. **CRITICAL:** the `skipAnim` guard prevents the glow from flicker-snapping at the wrap-around seam (the most likely template-3-specific regression — verify in Phase 4).
   - **(c) Project titles in DM Serif Display at larger size than other templates:** Below each slide, `text-2xl md:text-3xl text-slate-200 mt-4 text-center`. Lorem ipsum 3–5 words per policy. The larger size makes the title a focal element rather than a footnote.
 - **Active slot scale `1`, opacity `1`. Peek slots `scale: 0.92`, `opacity: 0.4`.** (Standard prompt values.)
 - **Slides (6 total):** Each an Unsplash image of completed landscape work, **biased toward twilight/dusk/blue-hour where natural**:
@@ -275,7 +275,7 @@ Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer make
 - **Main wrapper requirement (in `app/layout.tsx`):** `<main className="pb-20 md:pb-0">{children}</main>` — gives Mobile Sticky CTA Bar (h-20 on mobile) the clearance it needs above the footer.
 - **Grid:** 4-column desktop (`lg:grid-cols-4 gap-8`), single-column mobile.
   - **Column 1 — Brand:**
-    - Text-only `[Template 4]` (NO Lucide icon). DM Serif Display weight 400 `text-2xl text-white`.
+    - Text-only `[TEMPLATE 3]` (NO Lucide icon). DM Serif Display weight 400 `text-2xl text-white`.
     - 1-line lorem ipsum description in `text-slate-400`.
   - **Column 2 — Services:**
     - Heading: explicit `text-white font-semibold mb-4` — "Services". (Explicit color because the base CSS rule sets font-family only.)
@@ -289,7 +289,7 @@ Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer make
     - Email: `contact@placeholder.com` placeholder.
     - Address: `123 Sample Street, Sample Town, ST 00000` placeholder.
 - **Bottom bar (`mt-12 pt-8 border-t border-white/10 text-slate-500 text-sm flex flex-col md:flex-row justify-between items-center gap-4`):**
-  - Left: `© {new Date().getFullYear()} [Template 4]. All rights reserved.`
+  - Left: `© {new Date().getFullYear()} [TEMPLATE 3]. All rights reserved.`
   - Right: Small links row — Privacy · Terms · Sitemap (all `href="#"`, `hover:text-cyan-400`).
 
 ---
@@ -298,7 +298,7 @@ Template 4 is **dark-dominant** — 5 of 10 main sections are dark + Footer make
 
 The form is wired per `resend-form-prompt.md` (four spec files installed in Phase 2). `NEXT_PUBLIC_BUILD_MODE=preview` short-circuits the submit before any network call. The success-state copy reads:
 
-> This form goes live when [Template 4] launches.
+> This form goes live when [TEMPLATE 3] launches.
 
 Tone: factual, no "thanks!" framing (no real submission happened).
 

@@ -48,9 +48,9 @@ export default function Navbar() {
           <SmoothLink
             href="#top"
             className="font-display font-bold tracking-tight text-lg md:text-xl text-white transition-colors duration-200"
-            aria-label="[Template 4] home"
+            aria-label="[TEMPLATE 3] home"
           >
-            [TEMPLATE 4]
+            [TEMPLATE 3]
           </SmoothLink>
 
           <nav className="hidden md:flex items-center gap-8">
